@@ -1,2 +1,49 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<section class="hero is-danger is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        ユーザー一覧
+      </h1>
+      <%= form_tag(users_path, :method => "get") do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag "検索" ,:username => nil ,class: "button is-info"%>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @users.each do |user| %>
+      <div class="column is-3">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-image">
+                <figure class="image">
+                  <%= link_to user_path(user) do %>
+                    <%= attachment_image_tag user, :profile_image, fallback: "no-image.png" %>
+                  <% end %>
+                </figure>
+              </div>
+            </div>
+             <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <div class="title"><%= link_to user.username, user_path(user) %></div>
+                </div>
+              </div>
+              <div class="content">
+                投稿数 : <%= user.menus.count %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="pagination"><%= paginate @users %></div>
+</section>
+
+
+

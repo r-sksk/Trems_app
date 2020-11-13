@@ -1,2 +1,96 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        マイページ
+      </h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="columns is-centered">
+          <div class="column is-4">
+            <figure class="image is-128x128"  style="margin-left: auto; margin-right: auto;">
+              <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image" %>
+            </figure>
+          </div>
+          <div class="column is-8">
+            <table class="table is-fullwidth">
+              <tr>
+                <td class="is-size-4">
+                  <strong><%= @user.username %></strong>
+                </td>
+                <% if @user.id == current_user.id || current_user.admin? %>
+                <td class="is-size-4">
+                  <%= @user.email %>
+                </td>
+                <td>
+                <%= link_to "編集", edit_user_path(@user), class: "button is-primary" %>
+                </td>
+                <td>
+                  <%= link_to user_path(@user), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "button is-danger" do %>
+                      アカウントを削除する
+                  <% end %>
+                </td>
+                <% end %>
+              </tr>
+            </table>
+            <table class="table is-fullwidth">
+              <tr>
+                <td>
+                  <%= @user.profile %>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @user.menus.each do |menu| %>
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <%= attachment_image_tag menu, :image, fallback: "no-image.png" %>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <div class="title is-5"> <%= menu.title %> </div>
+                  <%= link_to menu_path(menu), class: "panel-block" do %>
+                    <span class="panel-icon"><i class="fas fa-book"></i></span>
+                      この投稿の詳細へ
+                  <% end %>
+                  <% if @user.id == current_user.id %>
+                    <%= link_to edit_menu_path(menu), class: "panel-block" do %>
+                      <span class="panel-icon"><i class="fas fa-edit"></i></span>
+                        この投稿を編集する
+                    <% end %>
+                    <%= link_to menu_path(menu), method: :delete, data: {confirm: "本当に削除しますか？"} , class: "panel-block" do %>
+                      <span class="panel-icon"><i class="fas fa-trash"></i></span>
+                        この投稿を削除する
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="content">
+                <time><%= menu.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
