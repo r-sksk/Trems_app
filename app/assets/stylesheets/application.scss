@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bulma";
+
+ .notification:not(:last-child){
+    margin-bottom: 0;
+}
+
+ .profile_image {
+    border-radius: 50%;
+ }
+
+ .main-image {
+	height: 940px;
+	background-image: url(training.png);
+	background-repeat: none;
+	background-size: cover;
+}
+
+.is-size-1 {
+	color:#fff;
+	font-family: cursive;
+}
+
+.is-size-3 {
+	color:#fff;
+}
+
+.coment {
+	color:#fff;
+}
+
+.hoge_footer {
+	position: fixed;
+	bottom: 0;
+	margin-bottom: 0;
+	width: 100%;
+
+	/* フッタの高さ */
+	text-align: center;
+	padding: 5px;
+	height: 40px;
+	background: #000;
+	color: #fff;
+}
+
