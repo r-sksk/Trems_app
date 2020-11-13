@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :users
   resources :menus
-
+  devise_scope :user do #deviseのコントローラーに追記
+    post '/users/guest_sign_in', to: 'sessions#new_guest' #ゲストユーザーログイン機能のルート
+  end
 
 end
