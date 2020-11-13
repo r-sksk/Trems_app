@@ -1,2 +1,37 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<section class="main-image">
+    <article class="media">
+      <div class="media-content">
+        <div class="content has-text-centered">
+          <p>
+            <strong class="is-size-1" style="font-family: fantasy;">training menu supporter</strong>
+          </p>
+          <p>
+            <strong class="is-size-3">あなたのスポーツやトレーニングの知識を発信してみませんか？</strong>
+          </p>
+          <div class="coment">
+          このWebサイトはユーザーがトレーニングメニューを投稿、閲覧できるサービスとなっております。
+          <br>人数が集まらなくてトレーニングメニューに困ったり、未経験のスポーツの顧問を任されたり、そんな経験がある方はぜひ本サービスをご利用ください。
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-4">
+            <br>
+              <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-fullwidth" %>
+            <br>
+              <%= link_to "新規登録", new_user_registration_path, class: "button is-info is-fullwidth" %>
+            <br>
+              <%
+=begin%>
+  <%= link_to "ゲストとしてログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: "button is-danger is-fullwidth" %>
+<%
+=end%>
+          </div>
+        </div>
+
+      </div>
+     </article>
+    <br>
+    </div>
+   <div>
+ </section>
+
