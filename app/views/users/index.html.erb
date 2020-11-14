@@ -5,8 +5,10 @@
         ユーザー一覧
       </h1>
       <%= form_tag(users_path, :method => "get") do %>
-        <%= text_field_tag :search %>
-        <%= submit_tag "検索" ,:username => nil ,class: "button is-info"%>
+        <div class="search-tag">
+          <%= text_field_tag :search %>
+          <%= submit_tag "検索" ,:username => nil ,class: "button is-info"%>
+        </div>
       <% end %>
     </div>
   </div>
