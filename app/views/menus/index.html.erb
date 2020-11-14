@@ -40,9 +40,7 @@
                 </div>
                 <div class="content">
                   <time><%= menu.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
-                  <%
-=begin%>
- <% if current_user.already_favorited?(menu) %>
+                  <% if current_user.already_favorited?(menu) %>
                     <%= link_to menu_favorites_path(menu), method: :delete do %>
                       <i class ="fas fa-heart"></i>
                     <% end %>
@@ -52,8 +50,6 @@
                     <% end %>
                   <% end %>
                   <%= menu.favorites.count %>
-<%
-=end%>
                 </div>
               </div>
             </div>
