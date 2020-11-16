@@ -61,3 +61,6 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem "bulma-rails"
 gem 'kaminari'
+gem "refile-s3"
+gem 'aws-sdk', '~> 2'
+gem 'dotenv-rails'
