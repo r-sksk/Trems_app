@@ -6,7 +6,7 @@
 
  - 開発環境・技術
    - 開発環境　 Windows
-   - 言語　　　 ruby 2.6.6  　　 ruby on rails 5.2.4.4
+   - 言語・DB　　　 ruby 2.6.6  　　 ruby on rails 5.2.4.4     &emsp; &emsp; postgresql
    - インフラ　 heroku（github連動）、migration自動化、AWS S3サーバー（画像ストレージ）
    - URL       &emsp;&emsp; &emsp;  https://tms-app-ryou.herokuapp.com/
 
@@ -25,3 +25,4 @@
    - いいね機能（中間テーブルの作成）
    - ユーザー、投稿記事の検索機能
    - 簡易gemの導入　devise, kaminari, refile ..etc
+   - サイトレイアウト bulma-rails, fontawesome
