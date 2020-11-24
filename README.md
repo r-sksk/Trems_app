@@ -13,7 +13,7 @@
      &emsp;&emsp; &emsp; &emsp;&emsp;  ゲストログイン機能がありますので、気軽に閲覧いただけます
 
    - その他技術  &emsp;Git（Sourcetree）、Github
-   <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;実務開発を想定し、ブランチを切りながら開発を進めました。<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Slack　<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;現役Webエンジニアとコミュニケーションを図り、開発に生かしました。
+   <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;実務開発を想定し、ブランチを切りながら開発を進めました。<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Slack　<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;現役Webエンジニアとコミュニケーションを図り、開発に生かしました。
 
  - 機能一覧
    - ユーザー、ゲストのログイン機能、アクセス制限の実装
